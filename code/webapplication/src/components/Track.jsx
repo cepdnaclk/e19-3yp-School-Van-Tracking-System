@@ -21,7 +21,7 @@ class Track extends Component {
         {busses.map((bus) => (
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tracking {bus.vehicleNumber}</h5>
+              <h5 class="card-title">Tracking {bus.vehicleID}</h5>
               <a href="/LocationTracking" class="btn btn-primary">
                 Track
               </a>

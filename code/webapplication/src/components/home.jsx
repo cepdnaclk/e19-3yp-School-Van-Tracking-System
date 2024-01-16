@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-import banner from "../images/banner.jpg";
+import one from "../images/one.jpg";
 
 class Home extends Component {
   state = {};
   render() {
     return (
       <>
-        <div class="card text-bg-dark">
-          <img src={banner} class="card-img" alt="..." />
+        <div class="card text-bg-dark mb-3" style={{ "max-height": 300 }}>
+          <img
+            src={one}
+            class="card-img"
+            alt="..."
+            style={{ "max-height": 300 }}
+          />
           <div class="card-img-overlay">
             {/* <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -26,7 +31,7 @@ class Home extends Component {
               <h5 class="card-title">Tracking Vehicles</h5>
               <p class="card-text">You can track all your busses here</p>
               <a href="/Track" class="btn btn-primary">
-                Tracking
+                Track
               </a>
             </div>
           </div>

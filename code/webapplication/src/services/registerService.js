@@ -8,3 +8,9 @@ export function registerNewDriver(obj) {
   const apiEndpoint = apiUrl + "/driverRegistration";
   return http.post(apiEndpoint, obj);
 }
+
+export function notAssignedDriversVehicles() {
+  const apiUrl = config.apiUrl;
+  const apiEndpoint = apiUrl + "/notAssignedDriversVehicles";
+  return http.get(apiEndpoint);
+}

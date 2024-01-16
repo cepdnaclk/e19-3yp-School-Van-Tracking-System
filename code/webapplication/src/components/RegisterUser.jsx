@@ -12,7 +12,7 @@ const RegisterUsers = () => {
           </a>
         </div>
       </div>
-      <div class="card">
+      {/* <div class="card">
         <div class="card-body">
           <h5 class="card-title">Ambulance Service registration</h5>
           <p class="card-text">You can register mbulance ervices here</p>
@@ -20,7 +20,7 @@ const RegisterUsers = () => {
             Register
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

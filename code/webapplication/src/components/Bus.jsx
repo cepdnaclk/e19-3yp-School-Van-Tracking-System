@@ -7,7 +7,7 @@ import { getBuses } from "../services/busService";
 class Bus extends Form {
   state = {
     data: {
-      vehicleNumber: "",
+      vehicleID: "",
       School: "",
       seats: "",
     },
@@ -16,7 +16,7 @@ class Bus extends Form {
   };
 
   schema = {
-    vehicleNumber: Joi.string().required().label("Licence Plate"),
+    vehicleID: Joi.string().required().label("Licence Plate"),
     School: Joi.string().required().label("School"),
     seats: Joi.number().required().label("seats"),
   };
@@ -34,7 +34,7 @@ class Bus extends Form {
     try {
       const { data } = this.state;
       await addNewBus({
-        vehicleNumber: data.vehicleNumber,
+        vehicleID: data.vehicleID,
         School: data.School,
         seats: data.seats,
         seatsFilled: 0,
@@ -53,7 +53,7 @@ class Bus extends Form {
         <div className="col-4">
           <h1>Add a new bus</h1>
           <form onSubmit={this.handleSubmit}>
-            {this.renderInput("vehicleNumber", "Licence Plate")}
+            {this.renderInput("vehicleID", "Licence Plate")}
             {this.renderInput("School", "School")}
             {this.renderInput("seats", "seats")} <br />
             {this.renderButton("Save")}
@@ -79,17 +79,15 @@ class Bus extends Form {
                 <th scope="col">School</th>
                 <th scope="col">seats</th>
                 <th scope="col">seats filled</th>
-                <th scope="col">Driver</th>
               </tr>
             </thead>
             <tbody>
               {busses.map((bus) => (
-                <tr key={bus.licencePlate}>
-                  <td>{bus.vehicleNumber}</td>
+                <tr key={bus.vehicleID}>
+                  <td>{bus.vehicleID}</td>
                   <td>{bus.School}</td>
                   <td>{bus.seats}</td>
                   <td>{bus.seatsFilled}</td>
-                  <td>{bus.driver}</td>
                 </tr>
               ))}
             </tbody>
